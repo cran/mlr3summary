@@ -96,15 +96,13 @@
 #' @export
 #' @examples
 #' if (require("mlr3")) {
+#'   data.table::setDTthreads(1L)
 #'   tsk_iris = tsk("iris")
 #'   lrn_rpart = lrn("classif.rpart", predict_type = "prob")
 #'   lrn_rpart$train(task = tsk_iris)
-#'   summary(lrn_rpart)
-#'   \donttest{
-#'   rsmp_cv3 = rsmp("cv", folds = 3L)
-#'   rr = resample(tsk_iris, lrn_rpart, rsmp_cv3, store_model = TRUE)
+#'   rsmp_cv2 = rsmp("cv", folds = 2L)
+#'   rr = resample(tsk_iris, lrn_rpart, rsmp_cv2, store_model = TRUE)
 #'   summary(lrn_rpart, rr)
-#'   }
 #' }
 summary.Learner = function(object, resample_result = NULL, control = summary_control(), ...) {
   # input checks
@@ -480,7 +478,9 @@ summary_control = function(measures = NULL,
   if (!is.null(measures)) {
     measures = as_measures(measures)
   }
-  assert_measures(measures)
+  if (!is.null(measures)) {
+    assert_measures(measures)
+  }
   iml_pfi_losses = c("ce", "f1", "logLoss", "mae", "mse", "rmse", "mape", "mdae",
     "msle", "percent_bias", "rae", "rmse", "rmsle", "rse", "rrse", "smape")
   for (imp_measure in importance_measures) {
@@ -496,7 +496,9 @@ summary_control = function(measures = NULL,
   if (!is.null(fairness_measures)) {
     fairness_measures = as_measures(fairness_measures)
   }
-  assert_measures(fairness_measures)
+  if (!is.null(fairness_measures)) {
+    assert_measures(fairness_measures)
+  }
   assert_character(protected_attribute, null.ok = TRUE, len = 1L)
   assert_character(hide, null.ok = TRUE)
   for (hid in hide) {

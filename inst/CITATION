@@ -12,5 +12,6 @@ bibentry(
   year      = 2024,
   publisher = "CEUR-WS.org",
   series    = "CEUR Workshop Proceedings",
-  volume    = "3793"
+  volume    = "3793",
+  url       = "https://ceur-ws.org/Vol-3793/paper_36.pdf"
 )

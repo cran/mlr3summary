@@ -1,6 +1,6 @@
 Package: mlr3summary
 Title: Model and Learner Summaries for 'mlr3'
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person("Susanne", "Dandl", , "dandls.datascience@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-4324-4163")),
@@ -31,7 +31,9 @@ Language: en-US
 LazyData: true
 NeedsCompilation: no
 RoxygenNote: 7.3.3
-Packaged: 2026-01-23 18:10:32 UTC; sdandl
+URL: https://github.com/mlr-org/mlr3summary
+BugReports: https://github.com/mlr-org/mlr3summary/issues
+Packaged: 2026-02-18 09:11:05 UTC; marc
 Author: Susanne Dandl [aut, cre] (ORCID:
     <https://orcid.org/0000-0003-4324-4163>),
   Marc Becker [aut] (ORCID: <https://orcid.org/0000-0002-8115-0400>),
@@ -41,4 +43,4 @@ Author: Susanne Dandl [aut, cre] (ORCID:
   Ludwig Bothmann [aut] (ORCID: <https://orcid.org/0000-0002-1471-6582>)
 Maintainer: Susanne Dandl <dandls.datascience@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-01-23 18:50:22 UTC
+Date/Publication: 2026-02-18 23:30:02 UTC
